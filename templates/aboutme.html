@@ -1,0 +1,50 @@
+{% include "header.html" %}
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+						<ul class="links">
+							<li><a href="{{ url_for('home') }}">Home</a></li>
+							{% if current_user.id == 1 %}
+							<li><a href="{{ url_for('create_post') }}">Create Post</a></li>
+							{% endif %}
+							<li class="active"><a href="{{ url_for('about') }}">About me</a></li>
+							{% if not current_user.is_authenticated: %}
+							<li><a href="{{ url_for('login') }}">Log in</a></li>
+							<li><a href="{{ url_for('register') }}">Register</a></li>
+							{% else: %}
+							<li><a href="{{ url_for('logout') }}">Log out</a></li>
+							{% endif %}
+						</ul>
+						</ul>
+								<ul class="icons alt">
+									<li><a href="https://www.twitter.com" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.facebook.com" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/scur-o" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date" style="color:#717981;">-</span>
+									<h1>About Me</h1>
+									<p>a glimpse of my life.</p>
+								</header>
+								<div class="image main"><img src="static/images/pic01.jpg" alt="" /></div>
+                                <p> During COVID lockdown, I had the opportunity to rethink my life. I questioned what I've done throughout my life
+									and what I truly wanted to do. As expected, my goals did not align with what I have been doing. I gave more thought
+									to the end-goal of my life and realized how limited time I have in this world to accomplish what I want. I was lost, but
+									empowered by this urgent desire to change, I picked up my first book in years. To my surprise, I fell in love with reading
+									and learning. This blog is therefore, a collection of my thoughts, interests, and learnings through various genres of books including,
+									but not limited to philosophy, psychology, economics, computer science, technology, and science.
+									 </p>
+								<p> My primary intention for this blog is to store my thoughts; to review my growth through time. Though
+								    in the future, I do wish to share my work to anyone else who may be traveling in a similar path as I.</p></div>
+
+					</div>
+
+{% include "footer.html" %}

@@ -1,0 +1,57 @@
+{% include "intro-header.html" %}
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+						{% if all_posts[0] %}
+							<article class="post featured">
+								<header class="major">
+									<span class="date">{{ all_posts[0].date }}</span>
+									<h2 class="title"><a href="{{ url_for('show_post', post_id=all_posts[0].id) }}">{{ all_posts[0].title }}</a></h2>
+									<br>
+									<p class="subtitle">{{ all_posts[0].subtitle }}</p>
+								</header>
+								<a href="{{ url_for('show_post', post_id=all_posts[0].id) }}" class="image main"><img src='{{all_posts[0].img_url}}' alt="" /></a>
+								<ul class="actions special">
+									<li><a href="{{ url_for('show_post', post_id=all_posts[0].id) }}" class="button large">Full Story</a></li>
+								</ul>
+							</article>
+
+						<!-- Posts -->
+
+
+							<section class="posts">
+								{% for post in all_posts[1:]: %}
+								<article>
+									<header>
+										<span class="date">{{post.date}}</span>
+										<h2><a href="{{ url_for('show_post', post_id=post.id) }}">{{post.title}}</a></h2>
+									</header>
+									<a href="{{ url_for('show_post', post_id=post.id) }}" class="image fit"><img src="post.img_url" alt="" /></a>
+									<p>{{post.subtitle}}</p>
+									<ul class="actions special">
+										<li><a href="{{ url_for('show_post', post_id=post.id) }}" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								{% endfor %}
+							</section>
+					<!-- Footer -->
+							<footer>
+								<div class="pagination">
+<!--									&lt;!&ndash;<a href="#" class="previous">Prev</a>&ndash;&gt;-->
+<!--									<a href="#" class="page active">1</a>-->
+<!--									<a href="#" class="page">2</a>-->
+<!--									<a href="#" class="page">3</a>-->
+<!--									<span class="extra">&hellip;</span>-->
+<!--									<a href="#" class="page">8</a>-->
+<!--									<a href="#" class="page">9</a>-->
+<!--									<a href="#" class="page">10</a>-->
+<!--									<a href="#" class="next">Next</a>-->
+								</div>
+							</footer>
+
+					</div>
+{%endif%}
+
+{% include "footer.html" %}

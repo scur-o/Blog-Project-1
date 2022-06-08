@@ -1,0 +1,48 @@
+{% include "header.html" %}
+
+				<footer id="footer">
+						<section>
+							<h2> Create Post </h2>
+							<br>
+							<form method="post" action="{{ url_for('create_post') }}">
+								<div class="fields">
+									<div class="field">
+										<label for="blog title">Blog Title</label>
+										<input type="text" name="blog title" id="blog title" />
+									</div>
+									<div class="field">
+										<label for="subtitle">Subtitle</label>
+										<input type="text" name="subtitle" id="subtitle" />
+									</div>
+									<div class="field">
+										<label for="img_url">Blog Image URL</label>
+										<textarea name="img_url" id="img_url" rows="3"></textarea>
+									</div>
+									<div class="field">
+										<label for="body">Blog Content</label>
+										<textarea class="blog-content" name="body" id="body" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Submit Post" /></li>
+								</ul>
+							</form>
+						</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Oscar Yip 2022</li><li>Design: <a href="">HTML5 UP</a></li></ul>
+					</div>
+
+
+
+
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>

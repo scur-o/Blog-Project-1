@@ -1,0 +1,72 @@
+{% include "header.html" %}
+<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="{{ url_for('home') }}">Home</a></li>
+							{% if current_user.id == 1 %}
+							<li><a href="{{ url_for('create_post') }}">Create Post</a></li>
+							{% endif %}
+							<li><a href="{{ url_for('about') }}">About me</a></li>
+							{% if not current_user.is_authenticated: %}
+							<li class="active"><a href="{{ url_for('login') }}">Log in</a></li>
+							<li><a href="{{ url_for('register') }}">Register</a></li>
+							{% else: %}
+							<li><a href="{{ url_for('logout') }}">Log out</a></li>
+							{% endif %}
+						</ul>
+								<ul class="icons alt">
+									<li><a href="https://www.twitter.com" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.facebook.com" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/scur-o" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+					</nav>
+
+			<footer id="footer">
+
+						<section>
+							<h2>Log in</h2>
+							<br>
+							{% with messages = get_flashed_messages() %}
+								{% if messages %}
+            						{% for message in messages %}
+             							 <p><strong>{{ message }}</strong>  </p>
+           							 {% endfor %}
+          						{% endif %}
+       						{% endwith %}
+							<form method="post" action="{{ url_for('login') }}">
+								<div class="fields">
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="password">Password</label>
+										<input type="password" name="password" id="password" />
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Log in" /></li>
+								</ul>
+							</form>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Oscar Yip 2022</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>
