@@ -7,6 +7,7 @@ from sqlalchemy.orm import relationship
 from datetime import datetime, date
 from flask_gravatar import Gravatar
 import smtplib
+import os
 import sqlite3
 
 current_year = datetime.now().year
@@ -25,8 +26,8 @@ gravatar = Gravatar(app,
                     base_url=None)
 
 # ------------------ CONNECT DB ------------------ #
-app.config['SECRET_KEY'] = b'\x95):\xf9[\xac\x15w\xb2\x1f\xabxI\xb5\xf2\x98'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SECRET_KEY'), 'sqlite:///blog.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
