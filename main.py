@@ -9,7 +9,6 @@ from flask_gravatar import Gravatar
 import smtplib
 import os
 
-
 EMAIL = 'oscarinfoport@yahoo.com'
 PASSWORD = 'xtsupkudbjfspdjb'
 
