@@ -56,7 +56,7 @@ class BlogPost(db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
     author = relationship('NewUser', back_populates='posts')
-    author_id = db.Column(db.String(250), db.ForeignKey('new_users.id'), nullable=False)
+    author_id = db.Column(db.Integer, db.ForeignKey('new_users.id'), nullable=False)
 
     title = db.Column(db.String(250), unique=True, nullable=False)
     subtitle = db.Column(db.String(250), nullable=False)
