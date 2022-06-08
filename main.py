@@ -8,9 +8,8 @@ from datetime import datetime, date
 from flask_gravatar import Gravatar
 import smtplib
 import os
-import sqlite3
 
-current_year = datetime.now().year
+
 EMAIL = 'oscarinfoport@yahoo.com'
 PASSWORD = 'xtsupkudbjfspdjb'
 
